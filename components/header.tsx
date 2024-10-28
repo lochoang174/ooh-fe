@@ -11,10 +11,15 @@ function Header() {
   const pathname= usePathname()
 
   const navItems = [
+    { href: "/booking", label: "Booking" },
+    { href: "/checking", label: "Checking" },
+
+    // { href: "/proposal", label: "Proposal" },
+    { href: "/nft", label: "NFT" },
+
     { href: "/registry", label: "Registry" },
-    // { href: "/story", label: "Story 📖" },
-    // { href: "/mint", label: "Mint " },
-    { href: "/booking", label: "Booking " },
+    { href: "/mint", label: "Mint " },
+
   ];
 
   const toggleMobileNav = () => {
@@ -32,13 +37,13 @@ function Header() {
               alt="logo"
             />
             <div className="ml-4 text-white -top-9 font-bold text-xs md:text-xl lg:text-xl lg:font-semibold max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto">
-              OOH
+              Mega-Board
             </div>
           </Link>
         </div>
 
         <div className="hidden lg:flex gap-10">
-        <ul className="flex gap-10 text-xl px-4 md:text-xl font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto ">
+        <ul className="flex gap-10 text-lg px-4 md:text-lg font-semibold text-neutral-700 dark:text-zinc-400 max-w-4xl leading-relaxed lg:leading-snug text-left mx-auto ">
             {navItems.map((item, index) => {
               // Check if the current item href matches the active route
               const isActive =pathname === item.href;

@@ -1,9 +1,7 @@
 "use client";
-import BillboardGrid from "@/components/Booking/BillboardGrid";
-import DisplayBooking from "@/components/Booking/DisplayBooking";
-import React, { useState } from "react";
-import { Form, Input } from "antd";
 
+import DisplayNft from "@/components/Nft/DisplayNft";
+import React, { useEffect, useState } from "react";
 import { useAccount, useChainId, useWriteContract } from "wagmi";
 import {
   CONTRACT_NFT_ADDRESS_MOONBEAM,
@@ -11,15 +9,14 @@ import {
   BLOCK_EXPLORER_BAOBAB,
   CHAINID,
 } from "@/components/contract";
-import { erc20Abi } from "@/components/erc20-abi";
 import { readContract } from "@wagmi/core";
+import { erc20Abi } from "@/components/erc20-abi";
 import { config } from "../config";
 import { Billboard } from "@/lib/type";
-import { useEffect } from "react";
+
 const page = () => {
   const account = useAccount();
   const chainId = useChainId();
-  const [form] = Form.useForm();
   const { data: hash, writeContract } = useWriteContract();
   const [data, setData] = useState<Billboard[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +25,6 @@ const page = () => {
 
   switch (chainId) {
     case CHAINID.BAOBAB:
-      tokenAddress = CONTRACT_NFT_ADDRESS_MOONBEAM;
       blockexplorer = BLOCK_EXPLORER_BAOBAB;
       break;
     case CHAINID.MOONBEAM:
@@ -38,6 +34,7 @@ const page = () => {
     default:
       throw new Error("Network not supported");
   }
+
   useEffect(() => {
     fetchingData();
   }, []);
@@ -46,42 +43,38 @@ const page = () => {
     setIsLoading(true);
     if (account.address && tokenAddress) {
       try {
-        const newestTokenId = await readContract(config, {
+        const response = await readContract(config, {
           abi: erc20Abi,
           address: tokenAddress,
-          functionName: "getTokenIdNewestOOH_NFT",
-          args: [],
+          functionName: 'getOOH_NFTs',
+          args: [account.address],
         });
-        const newestTokenIdInt = Number(newestTokenId);
-        const billboards = [];
-        console.log(newestTokenIdInt);
-        for (let tokenId = 0; tokenId < Number(newestTokenIdInt); tokenId++) {
+
+        const billboards = await Promise.all(response.map(async (tokenId) => {
           const tokenURI = await readContract(config, {
             abi: erc20Abi,
             address: tokenAddress,
-            functionName: "tokenURI",
+            functionName: 'tokenURI',
             args: [BigInt(tokenId)],
           });
 
           const res = await fetch(tokenURI);
           const data = await res.json();
-          const temp = {...data,tokenId:tokenId}
-          billboards.push(temp as Billboard);
-         
-        }
+          return data as Billboard;
+        }));
 
         setData(billboards);
       } catch (error) {
-        console.error("Error reading contract: ", error);
+        console.error('Error reading contract:', error);
         // You might want to set an error state here to display to the user
       } finally {
         setIsLoading(false);
       }
     } else {
-      console.log("Account or tokenAddress not available");
+      console.log('Account or tokenAddress not available');
       setIsLoading(false);
     }
-  };
+  }
 
   if (!account.isConnected) {
     return (
@@ -90,12 +83,13 @@ const page = () => {
       </div>
     );
   }
+ 
   return (
     <div className="w-full min-h-screen flex justify-center items-center">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <DisplayBooking data={data} />
+        <DisplayNft data={data} />
       )}
     </div>
   );

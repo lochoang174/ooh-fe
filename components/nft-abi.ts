@@ -1,703 +1,847 @@
 export const nftAbi = [
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "constructor",
+	  "inputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [],
-		"name": "cleanShitNFT",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "_OOH_calendar",
+	  "inputs": [
+		{
+		  "name": "",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "shitToken",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "shitTokenPerNFT",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "uriShitNFT",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "stakingContract",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+	  "type": "function",
+	  "name": "_contract_Id",
+	  "inputs": [],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "ERC721IncorrectOwner",
-		"type": "error"
+	  "type": "function",
+	  "name": "approve",
+	  "inputs": [
+		{
+		  "name": "to",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ERC721InsufficientApproval",
-		"type": "error"
+	  "type": "function",
+	  "name": "balanceOf",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "approver",
-				"type": "address"
-			}
-		],
-		"name": "ERC721InvalidApprover",
-		"type": "error"
+	  "type": "function",
+	  "name": "booking_OOH_NFT",
+	  "inputs": [
+		{
+		  "name": "booker",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "ooh_owner",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "context",
+		  "type": "string",
+		  "internalType": "string"
+		},
+		{
+		  "name": "amount",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "ERC721InvalidOperator",
-		"type": "error"
+	  "type": "function",
+	  "name": "burn",
+	  "inputs": [
+		{
+		  "name": "",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "pure"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "ERC721InvalidOwner",
-		"type": "error"
+	  "type": "function",
+	  "name": "burn_All_OOH_NFTs",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "receiver",
-				"type": "address"
-			}
-		],
-		"name": "ERC721InvalidReceiver",
-		"type": "error"
+	  "type": "function",
+	  "name": "burn_OOH_NFT",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			}
-		],
-		"name": "ERC721InvalidSender",
-		"type": "error"
+	  "type": "function",
+	  "name": "cancel_OOH_NFT",
+	  "inputs": [
+		{
+		  "name": "booker",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "_contractId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "context",
+		  "type": "string",
+		  "internalType": "string"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ERC721NonexistentToken",
-		"type": "error"
+	  "type": "function",
+	  "name": "getApproved",
+	  "inputs": [
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "OwnableInvalidOwner",
-		"type": "error"
+	  "type": "function",
+	  "name": "getOOH_NFTs",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "uint256[]",
+		  "internalType": "uint256[]"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "OwnableUnauthorizedAccount",
-		"type": "error"
+	  "type": "function",
+	  "name": "get_OOH_Calendar",
+	  "inputs": [
+		{
+		  "name": "ooh_owner",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string[]",
+		  "internalType": "string[]"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "approved",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
+	  "type": "function",
+	  "name": "get_OOH_Contract",
+	  "inputs": [
+		{
+		  "name": "booker",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "contractId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "ApprovalForAll",
-		"type": "event"
+	  "type": "function",
+	  "name": "isApprovedForAll",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "operator",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "bool",
+		  "internalType": "bool"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "_fromTokenId",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "_toTokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "BatchMetadataUpdate",
-		"type": "event"
+	  "type": "function",
+	  "name": "mint_OOH_NFT",
+	  "inputs": [
+		{
+		  "name": "to",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "uri",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "MetadataUpdate",
-		"type": "event"
+	  "type": "function",
+	  "name": "name",
+	  "inputs": [],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
+	  "type": "function",
+	  "name": "owner",
+	  "inputs": [],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "ownerOf",
+	  "inputs": [
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "renounceOwnership",
+	  "inputs": [],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "safeTransferFrom",
+	  "inputs": [
+		{
+		  "name": "from",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "to",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "safeTransferFrom",
+	  "inputs": [
+		{
+		  "name": "from",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "to",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "data",
+		  "type": "bytes",
+		  "internalType": "bytes"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			}
-		],
-		"name": "shootingShitNFT",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "setApprovalForAll",
+	  "inputs": [
+		{
+		  "name": "operator",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "approved",
+		  "type": "bool",
+		  "internalType": "bool"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
+	  "type": "function",
+	  "name": "supportsInterface",
+	  "inputs": [
+		{
+		  "name": "interfaceId",
+		  "type": "bytes4",
+		  "internalType": "bytes4"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "bool",
+		  "internalType": "bool"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "symbol",
+	  "inputs": [],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
+	  "type": "function",
+	  "name": "tokenURI",
+	  "inputs": [
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [
+		{
+		  "name": "",
+		  "type": "string",
+		  "internalType": "string"
+		}
+	  ],
+	  "stateMutability": "view"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "function",
+	  "name": "transferFrom",
+	  "inputs": [
+		{
+		  "name": "from",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "to",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "burn",
-		"outputs": [],
-		"stateMutability": "pure",
-		"type": "function"
+	  "type": "function",
+	  "name": "transferOwnership",
+	  "inputs": [
+		{
+		  "name": "newOwner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ],
+	  "outputs": [],
+	  "stateMutability": "nonpayable"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "Approval",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "approved",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "indexed": true,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [],
-		"name": "getShitArray",
-		"outputs": [
-			{
-				"internalType": "address[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "ApprovalForAll",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "operator",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "approved",
+		  "type": "bool",
+		  "indexed": false,
+		  "internalType": "bool"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "getShitNFTs",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "BatchMetadataUpdate",
+	  "inputs": [
+		{
+		  "name": "_fromTokenId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "_toTokenId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "MetadataUpdate",
+	  "inputs": [
+		{
+		  "name": "_tokenId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "OOHBooked",
+	  "inputs": [
+		{
+		  "name": "booker",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "ooh_owner",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "contractId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "context",
+		  "type": "string",
+		  "indexed": false,
+		  "internalType": "string"
+		},
+		{
+		  "name": "amount",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "OOHCancelled",
+	  "inputs": [
+		{
+		  "name": "booker",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "contractId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "context",
+		  "type": "string",
+		  "indexed": false,
+		  "internalType": "string"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "indexed": false,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "OwnershipTransferred",
+	  "inputs": [
+		{
+		  "name": "previousOwner",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "newOwner",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "ShitArray",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "event",
+	  "name": "Transfer",
+	  "inputs": [
+		{
+		  "name": "from",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "to",
+		  "type": "address",
+		  "indexed": true,
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "indexed": true,
+		  "internalType": "uint256"
+		}
+	  ],
+	  "anonymous": false
 	},
 	{
-		"inputs": [],
-		"name": "shitStaking",
-		"outputs": [
-			{
-				"internalType": "contract ShitStaking",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721IncorrectOwner",
+	  "inputs": [
+		{
+		  "name": "sender",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		},
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	},
 	{
-		"inputs": [],
-		"name": "ShitToken",
-		"outputs": [
-			{
-				"internalType": "contract ShitCoin",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InsufficientApproval",
+	  "inputs": [
+		{
+		  "name": "operator",
+		  "type": "address",
+		  "internalType": "address"
+		},
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ]
 	},
 	{
-		"inputs": [],
-		"name": "ShitTokenPerNFT",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InvalidApprover",
+	  "inputs": [
+		{
+		  "name": "approver",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "bytes4",
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InvalidOperator",
+	  "inputs": [
+		{
+		  "name": "operator",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	},
 	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InvalidOwner",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InvalidReceiver",
+	  "inputs": [
+		{
+		  "name": "receiver",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	},
 	{
-		"inputs": [],
-		"name": "uri",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
+	  "type": "error",
+	  "name": "ERC721InvalidSender",
+	  "inputs": [
+		{
+		  "name": "sender",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
+	},
+	{
+	  "type": "error",
+	  "name": "ERC721NonexistentToken",
+	  "inputs": [
+		{
+		  "name": "tokenId",
+		  "type": "uint256",
+		  "internalType": "uint256"
+		}
+	  ]
+	},
+	{
+	  "type": "error",
+	  "name": "OwnableInvalidOwner",
+	  "inputs": [
+		{
+		  "name": "owner",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
+	},
+	{
+	  "type": "error",
+	  "name": "OwnableUnauthorizedAccount",
+	  "inputs": [
+		{
+		  "name": "account",
+		  "type": "address",
+		  "internalType": "address"
+		}
+	  ]
 	}
-] as const
+  ] as const

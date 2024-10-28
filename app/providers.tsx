@@ -63,6 +63,30 @@ const bifrostTestnet = {
   },
   testnet: true,
 };
+const moonbaseAlphaTestnet = {
+  id: 1287, // Sửa thành 8880 hoặc "0x22b0"
+  name: "Moonbase Alpha",
+  network: "Moonbase Alpha",
+  nativeCurrency: {
+    name: "Moonbase Alpha",
+    symbol: "DEV",
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.api.moonbase.moonbeam.network"],
+      websocket: ["wss://rpc.api.moonbase.moonbeam.network"],
+    },
+    public: {
+      http: ["https://rpc.api.moonbase.moonbeam.network"],
+      websocket: ["wss://rpc.api.moonbase.moonbeam.network"],
+    },
+  },
+  blockExplorers: {
+    default: { name: "Moonbase Alpha", url: "https://moonbase.moonscan.io/" },
+  },
+  testnet: true,
+};
 
 const config = getDefaultConfig({
   appName: "DApp Bootcamp Frontends",
@@ -74,10 +98,11 @@ const config = getDefaultConfig({
       wallets: [trustWallet, ledgerWallet],
     },
   ],
-  chains: [bifrostMainnet, bifrostTestnet],
+  chains: [moonbaseAlphaTestnet],
   transports: {
-    [3068]: http("https://public-01.mainnet.bifrostnetwork.com/rpc"),
-    [49088]: http("https://public-01.testnet.bifrostnetwork.com/rpc"),
+    //   [3068]: http("https://public-01.mainnet.bifrostnetwork.com/rpc"),
+    // [49088]: http("https://public-01.testnet.bifrostnetwork.com/rpc"),
+    [1287]: http("https://rpc.api.moonbase.moonbeam.network"),
   },
   ssr: true,
 });

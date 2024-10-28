@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { Form, Input, Button, DatePicker, Upload } from "antd";
+import { Form, Input, Button, DatePicker, Upload, message } from "antd";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
 import dayjs from "dayjs";
 import { PlusOutlined } from "@ant-design/icons";
 import CustomButton from "@/components/Button/CustomButton";
+import emailjs from '@emailjs/browser';
 
 const { RangePicker } = DatePicker;
 
@@ -15,8 +16,50 @@ const LoginForm = () => {
 
   // Function to handle form submission
   const onFinish = (values: any) => {
-    console.log("Form values: ", values); // Logs the form values to console
+    // Prepare the email template parameters
+    const templateParams = {
+      from_name: values.fullName,
+      country: values.country,
+      city: values.city,
+      address: values.address,
+      telegram: values.telegram,
+      email: values.email,
+      // Chuyển đổi các tệp thành URL nếu là các đối tượng File
+      // upload: values.upload && Array.isArray(values.upload)
+      // ? values.upload.map((file: any) => {
+      //     // Kiểm tra xem file có phải là đối tượng File hay không
+      //     if (file instanceof File) {
+      //         return file; // Trả về file trực tiếp
+      //     }
+      //     return null; // Nếu không phải File, trả về null
+      // }).filter(file => file !== null) // Lọc các giá trị null
+      // : []
   };
+
+    // Handle file uploads
+    const formData = new FormData();
+    if (values.upload) {
+        values.upload.forEach((file: any) => {
+            formData.append('upload', file); // Thêm tất cả các tệp vào FormData
+        });
+    }
+
+    // Send the email with file attachment
+    emailjs.send('service_wq5ka0r', 'template_livp3r5', { ...templateParams, my_file: formData },'9NKUqVas39RkoIC_V')
+        .then((response) => {
+            console.log('Email sent successfully:', response);
+            // User feedback for success
+          message.success("Email sent successfully")
+          })
+        .catch((error) => {
+            console.error('Error sending email:', error);
+            // User feedback for error
+            alert('Error sending email. Please try again.');
+        });
+
+    console.log("Form values: ", values); // Keep this if you still want to log the values
+};
+
 
   const normFile = (e: any) => {
     if (Array.isArray(e)) {
@@ -119,14 +162,14 @@ const LoginForm = () => {
         </Form.Item>
 
         {/* Image Upload */}
-        <Form.Item
+        {/* <Form.Item
           name="upload"
           valuePropName="fileList"
           getValueFromEvent={normFile}
           rules={[{ required: true, message: "Please upload your image!" }]}
         >
           <Upload
-            action="/upload.do"
+            // action="/upload.do"
             listType="picture-card"
             maxCount={3} // Limit file upload to 3 images
           >
@@ -138,6 +181,28 @@ const LoginForm = () => {
               <div>Upload</div>
             </button>
           </Upload>
+        </Form.Item> */}
+        {/* Telegram */}
+        <Form.Item
+          name="telegram"
+          label={<label style={{ color: "white" }}>Telegram</label>}
+          rules={[{ required: true, message: "Please enter your Telegram username!" }]}
+          style={{ marginBottom: "12px" }}
+        >
+          <Input placeholder="Input your Telegram username" />
+        </Form.Item>
+
+        {/* Email */}
+        <Form.Item
+          name="email"
+          label={<label style={{ color: "white" }}>Email</label>}
+          rules={[
+            { required: true, message: "Please enter your email!" },
+            { type: 'email', message: "Please enter a valid email address!" }
+          ]}
+          style={{ marginBottom: "12px" }}
+        >
+          <Input placeholder="Input your email address" />
         </Form.Item>
 
         {/* Submit Button */}
