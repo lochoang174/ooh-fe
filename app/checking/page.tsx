@@ -18,8 +18,8 @@ const contractData: ContractData[] = [
     customerWallet: '0x123...abc',
     contractId: 'CON001',
     status: 0, // Pending
-    startDate: sampleData[0].startDate,
-    endDate: sampleData[0].endDate,
+    endDate:sampleData[0].endDate!,
+    startDate:sampleData[0].startDate!
   },
   {
     id: '2',
@@ -29,8 +29,8 @@ const contractData: ContractData[] = [
     customerWallet: '0x456...def',
     contractId: 'CON002',
     status: 1, // Approved
-    startDate: sampleData[1].startDate,
-    endDate: sampleData[1].endDate,
+    endDate:sampleData[1].endDate!,
+    startDate:sampleData[1].startDate!
   },
   {
     id: '3',
@@ -40,8 +40,8 @@ const contractData: ContractData[] = [
     customerWallet: '0x789...ghi',
     contractId: 'CON003',
     status: 2, // Rejected
-    startDate: sampleData[2].startDate,
-    endDate: sampleData[2].endDate,
+    endDate:sampleData[2].endDate!,
+    startDate:sampleData[2].startDate!
   },
   {
     id: '4',
@@ -51,8 +51,8 @@ const contractData: ContractData[] = [
     customerWallet: '0xabc...jkl',
     contractId: 'CON004',
     status: 1, // Approved
-    startDate: sampleData[3].startDate,
-    endDate: sampleData[3].endDate,
+    endDate:sampleData[3].endDate!,
+    startDate:sampleData[3].startDate!
   },
 ];
 

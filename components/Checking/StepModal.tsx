@@ -8,8 +8,8 @@ import {
   CodeSandboxOutlined,
   DollarOutlined,
 } from "@ant-design/icons";
-import { ContractData } from "@/app/checking/page";
 import OwnerConfirm from "./OwnerConfirm";
+import { ContractData } from "@/lib/type";
 
 interface StepModalProps {
   contract: ContractData;

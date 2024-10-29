@@ -11,7 +11,7 @@ const DetailInformation = ({ billboard,customerName,customerWallet}:Pros) => {
     <div>
        <Row gutter={16}>
         <Col span={12}>
-          <img src={billboard.images[0]} alt="Billboard" style={{ width: '100%' }} />
+          <img src={billboard.imageUrl} alt="Billboard" style={{ width: '100%' }} />
         </Col>
         <Col span={12}>
         <div className='flex flex-col gap-1'>

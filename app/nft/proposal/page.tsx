@@ -25,8 +25,8 @@ const contractData: ContractData[] = [
     customerWallet: "0x123...abc",
     contractId: "CON001",
     status: 0, // Pending
-    startDate: sampleData[0].startDate,
-    endDate: sampleData[0].endDate,
+    startDate: sampleData[0].startDate!,
+    endDate: sampleData[0].endDate!,
   },
   {
     id: "2",
@@ -36,8 +36,8 @@ const contractData: ContractData[] = [
     customerWallet: "0x456...def",
     contractId: "CON002",
     status: 0, // Approved
-    startDate: sampleData[1].startDate,
-    endDate: sampleData[1].endDate,
+    startDate: sampleData[1].startDate!,
+    endDate: sampleData[1].endDate!,
   },
 ];
 const Page: React.FC = () => {
