@@ -40,6 +40,8 @@ const BookingModal: React.FC<BookingModalProps> = ({ billboard, isVisible, onCan
       tokenAddress = CONTRACT_NFT_ADDRESS_MOONBEAM;
       blockexplorer = BLOCK_EXPLORER_BAOBAB;
       break;
+    case CHAINID.CYPRESS:
+      break
     case CHAINID.MOONBEAM:
       tokenAddress = CONTRACT_NFT_ADDRESS_MOONBEAM;
       blockexplorer = BLOCK_EXPLORER_MOONBEAM;

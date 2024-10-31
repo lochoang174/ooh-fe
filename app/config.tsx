@@ -1,4 +1,5 @@
 import { http, createConfig } from '@wagmi/core';
+import { kaia} from "wagmi/chains";
 
 // Define the Unique chain
 const opalTestnet = {
@@ -52,9 +53,10 @@ const moonbaseAlphaTestnet = {
 };
 
 export const config = createConfig({
-  chains: [moonbaseAlphaTestnet], // Thêm uniqueChain vào mảng chains
+  chains: [kaia,moonbaseAlphaTestnet], // Thêm uniqueChain vào mảng chains
   transports: {
     // [8882]: http("https://rpc-opal.unique.network"),
+    [kaia.id]: http("https://public-en.node.kaia.io"),
     [1287]: http("https://rpc.api.moonbase.moonbeam.network"),
   },
 })

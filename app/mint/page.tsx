@@ -26,9 +26,10 @@ const MintPage = () => {
 
   switch (chainId) {
     case CHAINID.BAOBAB:
-      tokenAddress = CONTRACT_NFT_ADDRESS_MOONBEAM;
       blockexplorer = BLOCK_EXPLORER_BAOBAB;
       break;
+    case CHAINID.CYPRESS:
+      break
     case CHAINID.MOONBEAM:
       tokenAddress = CONTRACT_NFT_ADDRESS_MOONBEAM;
       blockexplorer = BLOCK_EXPLORER_MOONBEAM;
@@ -36,7 +37,6 @@ const MintPage = () => {
     default:
       throw new Error("Network not supported");
   }
- 
 
   const onFinish = async (values: any) => {
     try {

@@ -9,6 +9,7 @@ import {
 import { trustWallet, ledgerWallet } from "@rainbow-me/rainbowkit/wallets";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider, http } from "wagmi";
+import { kaia } from "wagmi/chains";
 
 const { wallets } = getDefaultWallets();
 
@@ -98,10 +99,12 @@ const config = getDefaultConfig({
       wallets: [trustWallet, ledgerWallet],
     },
   ],
-  chains: [moonbaseAlphaTestnet],
+  chains: [kaia, moonbaseAlphaTestnet],
   transports: {
     //   [3068]: http("https://public-01.mainnet.bifrostnetwork.com/rpc"),
     // [49088]: http("https://public-01.testnet.bifrostnetwork.com/rpc"),
+    [kaia.id]: http("https://public-en.node.kaia.io"),
+    // [1001]: http("https://public-en.kairos.node.kaia.io"),
     [1287]: http("https://rpc.api.moonbase.moonbeam.network"),
   },
   ssr: true,
