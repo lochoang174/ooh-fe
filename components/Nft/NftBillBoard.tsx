@@ -28,12 +28,8 @@ const NftBillBoard: React.FC<CardProps> = ({ billboard }) => {
         </h3>
         <p className="">Rental Price: {billboard.price}/day</p>
         <p className="">
-          Mint:{" "}
-          {billboard.isMint ? (
-            <Tag color="green">True</Tag>
-          ) : (
-            <Tag color="error">False</Tag>
-          )}
+          Mint:{" "}  <Tag color="green">True</Tag>
+          
         </p>
 
         <div className="flex gap-2 mt-3">

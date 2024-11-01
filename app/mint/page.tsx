@@ -101,7 +101,8 @@ const MintPage = () => {
 
         {/* Submit Button */}
         <Form.Item style={{ marginBottom: "0px" }}>
-          <CustomButton content="Mint" onclick={handleButtonClick} />
+          {/* @ts-ignore */}
+          <CustomButton content="Mint" htmlType="submit" />
         </Form.Item>
       </Form>
     </div>

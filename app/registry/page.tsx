@@ -74,11 +74,6 @@ const LoginForm = () => {
     form.setFieldsValue({ city: undefined });
   };
 
-  // Function to trigger form submission on button click
-  const handleButtonClick = () => {
-    form.submit();
-  };
-
   return (
     <div className="w-full min-h-screen flex justify-center items-center ">
       <Form
@@ -207,7 +202,8 @@ const LoginForm = () => {
 
         {/* Submit Button */}
         <Form.Item style={{ marginBottom: "0px" }}>
-          <CustomButton content="Submit" onclick={handleButtonClick} />
+          {/* @ts-ignore */}
+          <CustomButton content="Submit" htmlType="submit"  />
         </Form.Item>
       </Form>
     </div>

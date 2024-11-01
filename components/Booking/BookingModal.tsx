@@ -134,6 +134,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ billboard, isVisible, onCan
           />
         </Form.Item>
 
+            {/* @ts-ignore */}
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
